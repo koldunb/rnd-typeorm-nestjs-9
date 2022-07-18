@@ -10,14 +10,17 @@ import {
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './user.entity';
 import { UsersService } from './users.service';
+import { Transactional } from "typeorm-transactional-cls-hooked";
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @Transactional()
   @Post()
-  create(@Body() createUserDto: CreateUserDto): Promise<User> {
-    return this.usersService.create(createUserDto);
+  async create(@Body() createUserDto: CreateUserDto): Promise<User> {
+    const user = await this.usersService.create(createUserDto);
+    throw Error('Transaction test');
   }
 
   @Get()
