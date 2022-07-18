@@ -28,7 +28,7 @@
     "rimraf": "3.0.2",
     "rxjs": "7.5.5",
     "typeorm": "0.3.7",
-    "typeorm-transactional-cls-hooked": "git+https://github.com/jczacharia/typeorm-transactional-cls-hooked.git"
+    "typeorm-transactional-cls-hooked": "git+https://github.com/getsorbet/typeorm-transactional-cls-hooked.git"
   },
   "devDependencies": {
     "@nestjs/cli": "9.0.0",
